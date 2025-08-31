@@ -5,8 +5,9 @@ import AboutPage from './components/AboutPage';
 import ProjectsPage from './components/ProjectsPage';
 import ContactPage from './components/ContactPage';
 import HomePage from './components/HomePage';
-import FooterPage from './components/FooterPage'; // Corrected import
+
 import './styles.css';
+import FooterPage from './components/FooterPage';
 
 function App() {
   return (

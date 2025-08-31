@@ -3,7 +3,7 @@ import { useNavigate } from 'react-router-dom';
 import './HomePage.css';
 import profileImage from '../assets/user.png';
 import projImage from '../assets/proj.jpg';
-import resumePDF from '../assets/Nandinee_Nargesh_Resume.pdf';
+import resume from '../assets/Nandinee_Nargesh_Resume.pdf';
 
 
 const movingTextContent = " Full-Stack Developer | Passionate About DSA & Problem Solving | Full-Stack Developer | Passionate About DSA & Problem Solving   ";
@@ -15,7 +15,7 @@ const HomePage = () => {
             <div className="home-grid">
                 {/* Profile and About */}
                 <div className="card profile-card glowing-card">
-                    <img src={profileImage} alt="Profile" className="profile-image home-image" />
+                    <img src={profileImage} alt="Profile" className="profile-image" />
                     <div className="profile-text">
                         <h3 className="card-title">Nandinee Nargesh.</h3>
                         <p className='card-subtitle'> Full-Stack Developer with a strong foundation in Data Structures and Algorithms.I specialize in building end-to-end web applications using modern technologies while applying problem-solving skills to create efficient and optimized solutions.</p>
@@ -49,7 +49,7 @@ const HomePage = () => {
                 {/* Skills Card */}
                 <div className="card skills-card glowing-card">
                     <div className="card-content">
-                        <p className="card-subtitle">SHOWCASE</p>
+                        <p className="card-subtitle">My Expertise</p>
                         <h3 className="card-title">Skills</h3>
                         <div className="card-icon" onClick={() => navigate('/about')}>
                             <i className="fas fa-arrow-right"></i>
@@ -60,11 +60,11 @@ const HomePage = () => {
                 {/* Resume Card */}
                 <div className="card resume-card glowing-card">
                     <div className="card-content">
-                        <p className="card-subtitle">SHOWCASE</p>
-                        <h3 className="card-title">Resume</h3>
+                        <p className="card-subtitle">My Resume</p>
+                        <h3 className="card-title">Download My Resume</h3>
                         <div className="card-icon">
-                            <a href={resumePDF} download>
-                                  <i className="fas fa-download"></i>
+                            <a href={resume} download>
+                                <i className="fas fa-download"></i>
                             </a>
                         </div>
                     </div>
