@@ -1,0 +1,183 @@
+.about-page {
+    padding-top: 50px;
+    max-width: 1170px;
+    margin: 0 auto;
+
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: auto auto auto auto; /* Added more rows */
+    gap: 30px;
+}
+@keyframes popUp {
+  0% {
+    opacity: 0;
+    transform: scale(0.5) translateY(200px);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1) translateY(0);
+  }
+}
+.summary-section {
+    grid-column: 1 / span 2;
+    text-align: center;
+    
+}
+
+.summary-content {
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    gap: 30px;
+    align-items: stretch;
+}
+
+.profile-image-card {
+    border-radius: 20px;
+    overflow: hidden;
+    position: relative;
+    background: var(--profile-gradient);
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+     /* Animation properties */
+    opacity: 0;
+    animation: popUp 0.5s ease-out forwards;
+    transition: transform 0.3s ease-in-out; /* Add transition for a smooth hover effect */
+
+}
+
+.profile-image {
+    height: auto;
+    width: 100%;
+    object-fit: cover;
+    display: block;
+    margin-left: 90px;
+   
+}
+
+.bio-card {
+    background-color: var(--card-background);
+    border: 1px solid var(--border-color);
+    border-radius: 20px;
+    padding: 30px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    text-align: left;
+     /* Animation properties */
+    opacity: 0;
+    animation: popUp 0.5s ease-out forwards;
+    transition: transform 0.3s ease-in-out; /* Add transition for a smooth hover effect */
+
+}
+
+.bio-card h3 {
+    font-size: 1.5rem;
+    margin-top: 0;
+}
+
+.experience-section {
+    grid-column: 1;
+    grid-row: 3;
+     /* Animation properties */
+    opacity: 0;
+    animation: popUp 0.5s ease-out forwards;
+    transition: transform 0.3s ease-in-out; /* Add transition for a smooth hover effect */
+
+}
+
+.skills-section {
+    grid-column: 1;
+    grid-row: 2;
+     /* Animation properties */
+    opacity: 0;
+    animation: popUp 0.5s ease-out forwards;
+    transition: transform 0.3s ease-in-out; /* Add transition for a smooth hover effect */
+
+}
+
+.education-section {
+    grid-column: 2;
+    grid-row: 2 / span 2; /* This section now spans two rows to sit next to Experience and Skills */
+     /* Animation properties */
+    opacity: 0;
+    animation: popUp 0.5s ease-out forwards;
+    transition: transform 0.3s ease-in-out; /* Add transition for a smooth hover effect */
+
+}
+.socials-section, .resume-section {
+    /* Animation properties */
+    opacity: 0;
+    animation: popUp 0.5s ease-out forwards;
+    transition: transform 0.3s ease-in-out; /* Add transition for a smooth hover effect */
+
+}
+.resume-socials-container {
+    grid-column: 2 / span 1; /* This container spans the entire width */
+    grid-row: 3;
+    display: flex;
+    gap: 30px;
+    
+}
+
+.experience-box,
+.education-box,
+.skills-box
+{
+    padding-left: 30px;
+    
+}
+
+
+.resume-box {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+   height:65%;
+    z-index: 4;
+
+}
+
+.resume-button {
+    background-color: var(--background-dark);
+    border: 1px solid var(--border-color);
+    color: var(--primary-text);
+    padding: 10px 30px;
+    border-radius: 50px;
+    text-decoration: none;
+    cursor: pointer;
+    z-index: 5;
+    font-family: 'Montserrat', sans-serif;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+.resume-button:hover {
+    background-color: var(--primary-text);
+    color: var(--background-dark);
+}
+
+.socials-box {
+    display: flex;
+    gap: 20px;
+    justify-content: center;
+    height:65%;
+    align-items: center;
+}
+
+.social-icon {
+    width: 45px;
+    height: 45px;
+    cursor: pointer;
+    border-radius: 50%;
+    background-color: var(--card-background);
+    border: 1px solid var(--border-color);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--primary-text);
+    font-size: 1.2rem;
+    z-index: 5;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+.social-icon:hover {
+    background-color: var(--primary-text);
+    color: var(--background-dark);
+}

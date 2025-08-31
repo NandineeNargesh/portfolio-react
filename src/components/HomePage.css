@@ -1,0 +1,352 @@
+.home-page {
+    padding-top: 50px;
+}
+@keyframes popUp {
+  0% {
+    opacity: 0;
+    transform: scale(0.5) translateY(200px);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1) translateY(0);
+  }
+}
+
+.home-grid {
+    display: grid;
+    /* This defines the main layout for the entire page */
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows:auto;
+    gap: 30px;
+    align-items: stretch;
+}
+
+.card {
+    background-color: var(--card-background);
+    border: 1px solid var(--border-color);
+    border-radius: 20px;
+    padding: 25px;
+    position: relative;
+    overflow: hidden;
+        /* Animation properties */
+    opacity: 0;
+    animation: popUp 0.5s ease-out forwards;
+    transition: transform 0.3s ease-in-out; /* Add transition for a smooth hover effect */
+    
+}
+.card:hover {
+  transform: translateY(-10px); /* This effect will now work */
+}
+
+.glowing-card {
+    position: relative;
+}
+
+.card-subtitle {
+    font-size: 0.8rem;
+    color: var(--secondary-text);
+    text-transform: uppercase;
+}
+
+.card-title {
+    font-size: 1.5rem;
+    margin-top: 5px;
+    text-align: left;
+}
+
+.card-icon {
+    position: absolute;
+    bottom: 25px;
+    right: 25px;
+    color: var(--secondary-text);
+    z-index: 3;
+    cursor: pointer;
+}
+
+/* This is the profile card, which spans both rows on the left */
+.profile-card {
+    grid-row: 1 / span 3;
+    padding: 25px;
+    display: flex;
+    flex-direction: column;
+   
+    /* align-items:start; */
+}
+
+
+/* Moving headline card on the top right */
+.moving-text-card {
+    grid-column: 2 / span 2;
+    grid-row: 1;
+    width: 100%;
+    height: fit-content;
+    overflow: hidden;
+    padding: 0;
+    display: flex;
+    align-items: center;
+}
+
+.moving-text-container {
+    white-space: nowrap;
+    animation: scroll 10s linear infinite;
+    font-size: 1.2rem;
+    font-weight: 700;
+    color: var(--secondary-text);
+    padding: 25px;
+}
+
+@keyframes scroll {
+    0% { transform: translateX(0); }
+    100% { transform: translateX(-50%); }
+}
+
+
+.profile-image{
+    height: 200px;
+    width: 200px;
+  
+}
+/* The projects card on the bottom right */
+.projects-card {
+    grid-column: 3;
+    grid-row: 2 / span 2;
+    /* width: 25%; */
+  /* gap: 50px; */
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 25px;
+
+}
+.resume-card{
+    /* width: 25%; */
+     grid-column: 2 / span 1;
+    grid-row: 3;
+ 
+}
+.skills-card{
+    /* width: 25%; */
+    grid-column: 2;
+    grid-row: 2;
+ 
+ 
+}
+    
+
+
+/* This is the new container for the contact and socials cards */
+.contact-socials-container {
+    grid-column: 1 / span 2;
+    display: flex;
+    gap: 30px;
+    margin-top: 30px;
+    
+}
+.contact-info-card {
+    grid-column: 1;
+    grid-row: 4;
+}
+
+.socials-card {
+    grid-column: 2;
+    grid-row: 4;
+}
+/* .contact-info-card,
+.socials-card {
+    flex: 1; 
+
+text-align:left;
+    padding: 25px;
+} */
+
+
+.info-item {
+    display: flex;
+    align-items: center;
+    margin-bottom: 15px;
+    text-align: left;
+    justify-content: start;
+    margin-top: 15px;
+    cursor: pointer;
+    z-index: 3;
+    position: relative; /* This is the key fix to make z-index work */
+}
+
+
+
+.social-icons a {
+    width: 45px;
+    height: 45px;
+    border-radius: 50%;
+    background-color: var(--card-background);
+    border: 1px solid var(--border-color);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--primary-text);
+    font-size: 1.2rem;
+    transition: background-color 0.3s, color 0.3s;
+    cursor: pointer;
+    z-index: 3;
+    position: relative; /* This is the key fix to make z-index work */
+}
+
+.social-icons a:hover {
+    background-color: var(--primary-text);
+    color: var(--background-dark);
+}
+
+/* ... other styles ... */
+
+.contact-button {
+    background-color: var(--background-dark);
+    border: 1px solid var(--border-color);
+    color: var(--primary-text);
+    padding: 10px 30px;
+    border-radius: 50px;
+    cursor: pointer;
+    font-family: 'Montserrat', sans-serif;
+    transition: background-color 0.3s, color 0.3s;
+    z-index: 3; /* This ensures the button is on top */
+    position: relative; /* This is the key fix to make z-index work */
+}
+
+.info-icon {
+    font-size: 1.5rem;
+    color: var(--primary-text);
+    margin-right: 15px;
+    flex-shrink: 0;
+}
+
+.social-icons {
+    display: flex;
+    gap: 15px;
+    margin-top: 15px;
+    cursor: pointer;
+    z-index: 3;
+}
+
+
+
+
+
+/* work together card */
+
+.work-together-card {
+    grid-column: 3 / span 1; /* This makes the new card span both columns */
+    grid-row: 4;
+    padding: 39px;
+       /* Animation properties */
+    opacity: 0;
+    animation: popUp 0.5s ease-out forwards;
+    transition: transform 0.3s ease-in-out; /* Add transition for a smooth hover effect */
+
+      text-align:left;
+}
+  
+.project-img{
+    height: 200px;
+    width: 280px;
+    border-radius: 20px;
+    display: block;
+    
+  
+}
+.home-image{
+    margin-left: 55px;
+}
+.project-img:hover{
+    transform:scale(1.2);
+    transition: all 0.3s ease-in-out;
+}
+
+.work-together-card h3 {
+    font-size: 2rem;
+    margin-bottom: 20px;
+    margin-top:0;
+   text-align: left;
+}
+
+
+
+.contact-button:hover {
+    background-color: var(--primary-text);
+    color: var(--background-dark);
+}
+
+/* Media queries for responsiveness */
+@media (max-width: 1200px) {
+    .home-grid {
+        grid-template-columns: repeat(2, 1fr);
+        grid-template-rows: auto;
+    }
+    .profile-card {
+        grid-column: 1;
+        grid-row: 1 / span 2;
+    }
+    .moving-text-card {
+        grid-column: 2;
+        grid-row: 1;
+    }
+    .projects-card {
+        grid-column: 2;
+        grid-row: 2;
+    }
+    .skills-card {
+        grid-column: 1;
+        grid-row: 3;
+    }
+    .resume-card {
+        grid-column: 2;
+        grid-row: 3;
+    }
+    .contact-info-card {
+        grid-column: 1;
+        grid-row: 4;
+    }
+    .socials-card {
+        grid-column: 2;
+        grid-row: 4;
+    }
+    .work-together-card {
+        grid-column: 1 / span 2;
+        grid-row: 5;
+    }
+}
+
+@media (max-width: 768px) {
+    .home-grid {
+        grid-template-columns: 1fr;
+    }
+    .profile-card, .moving-text-card, .projects-card, .skills-card, .resume-card, .contact-info-card, .socials-card, .work-together-card {
+        grid-column: 1;
+        grid-row: auto;
+    }
+}
+
+.footer{
+    background-color: var(--footer-background);
+    color: var(--footer-text);
+    padding: 20px;
+    text-align: center;
+}
+
+.card-icon {
+        border: 1px solid var(--border-color);
+   
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.2rem;
+    line-height: 1;
+    cursor: pointer;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+.card-icon:hover {
+    background-color: var(--primary-text);
+    color: var(--background-dark);
+}

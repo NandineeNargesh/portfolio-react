@@ -1,0 +1,73 @@
+.projects-page {
+    padding-top: 50px;
+}
+
+.projects-section {
+    text-align: center;
+    margin-bottom: 80px;
+}
+
+.sub-title {
+    color: var(--secondary-text);
+    font-size: 1rem;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 30px;
+}
+
+.sparkle {
+    color: var(--secondary-text);
+    font-size: 1.5rem;
+    margin: 0 10px;
+}
+
+.sub-title::before, .sub-title::after {
+    content: '';
+    width: 50px;
+    height: 1px;
+    background-color: var(--border-color);
+    margin: 0 10px;
+}
+
+/* This is the base layout for large screens */
+.projects-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-auto-rows: auto;
+    gap: 30px;
+    margin-top: 30px;
+    column-count: 3;
+    
+
+}
+
+/* These classes are controlled by Contentful */
+.wide {
+    grid-column: span 2;
+    grid-row: span 1;
+}
+
+.tall {
+    grid-row: span 1;
+    grid-column: span 1;
+}
+
+/* Media query for smaller screens */
+@media (max-width: 992px) {
+    .projects-grid {
+        grid-template-columns: repeat(2, 1fr); /* Change to two columns */
+    }
+}
+
+@media (max-width: 768px) {
+    .projects-grid {
+        grid-template-columns: 1fr; /* Change to a single column for mobile */
+    }
+    .wide, .tall {
+        grid-column: span 1;
+        grid-row: span 1;
+    }
+}
